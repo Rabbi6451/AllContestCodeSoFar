@@ -10,7 +10,6 @@ int main(){
     for(int i=0;i<a;i++){
         cin>>t[i];
     }
-
     for(int i=0;i<a;i++){
         count=i+count;
     }
