@@ -7,7 +7,6 @@ int main(){
     cin>>a;
     vector<int> t(a);
     for(int i=0;i<a;i++) cin>>t[i];
-    set<int> (t.begin(),t.end());
-   
-    
+    set<int> s(t.begin(),t.end());
+    cout << (s.size() == a ? "YES" : "NO");
 }
