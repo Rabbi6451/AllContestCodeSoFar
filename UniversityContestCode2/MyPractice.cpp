@@ -16,7 +16,7 @@ int main() {
         sort(t.begin(), t.end());
 
         bool duplicate = false;
-        for (int i = 0; i < b - 1; i++) {
+        for (int i = 1; i <=b; i++) {
             if (t[i] == t[i + 1]) {
                 duplicate = true;
                 break;
