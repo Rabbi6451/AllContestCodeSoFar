@@ -11,7 +11,7 @@ int main() {
         total += coins[i];
     }
     
-    sort(coins.rbegin(), coins.rend()); // sort descending
+    sort(coins.rbegin(), coins.rend()); 
     
     int mySum = 0, count = 0;
     for (int c : coins) {
