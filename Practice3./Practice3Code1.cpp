@@ -7,7 +7,7 @@ int main() {
     vector<int> nums;
     
     for (int i = 0; i < s.size(); i += 2) {
-        nums.push_back(s[i] - '0');  // extract digit
+        nums.push_back(s[i] - '0'); 
     }
     
     sort(nums.begin(), nums.end());
