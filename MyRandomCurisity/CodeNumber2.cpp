@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -10,5 +10,4 @@ int main() {
 
     long long result = pow(value, power);
     cout << "Answer: " << result << endl;
-    return 0;
 }
