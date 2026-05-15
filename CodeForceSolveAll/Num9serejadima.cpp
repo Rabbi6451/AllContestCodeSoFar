@@ -26,7 +26,7 @@ int main() {
 
         if (turn) {
             sereja += pick;
-        } else {
+        } else { 
             dima += pick;
         }
         turn = !turn; 
