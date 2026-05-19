@@ -2,25 +2,23 @@
 using namespace std;
 
 int main() {
-    int a;
-    cin >> a;
-    while (a--) {
-        long long b, c, d;
-        cin >> b >> c >> d;
 
-        long long individual_cost = b * c;
+    int x;
+    cin >> x;
 
-        long long groups = b / 3;
-        long long remainder = b % 3;
-        long long group_cost = groups * d + remainder * c;
+    while (x--) {
+        long long n, a, b;
+        cin >> n >> a >> b;
 
-        long long min_cost = individual_cost;
-        if (group_cost < min_cost) {
-            min_cost = group_cost;
-        }
+        long long type2 = n / 3;
+        long long val = n % 3;
 
+        long long cost = 0;
 
-        cout << min_cost << endl;
+        cost += type2 * min(b, 3 * a);
+
+        cost += min(b, val * a);
+
+        cout << cost << '\n';
     }
-    return 0;
-}   
+}
