@@ -12,7 +12,7 @@ int main(){
     }
     if(rev==n){
         cout<<"yes";
-    }
+    } 
     cout<<rev;
     
 }
