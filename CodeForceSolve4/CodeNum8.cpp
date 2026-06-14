@@ -1,24 +1,43 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
+#include <numeric>
+
 using namespace std;
 
-int main(){
-    int a;
-    cin>>a;
-    while(a--){
-        int b;
-        cin>>b;
-        vector<int> t(b);
-        for(int i=0;i<b;i++){
-            cin>>t[i];
-        }
-        int maximum = *max_element(t.begin(),t.end());
-        int minimum = *min_element(t.begin(),t.end());
-        if((maximum-minimum) % 2 == 0){
-            cout<<0<<endl;
-        }else if(maximum-minimum%2 != 0){
-            cout<<maximum-minimum<<endl;
-        }
+int mygcd(int a, int b) {
+    while (b != 0) {
+        int temp = a % b;
+        a = b;
+        b = temp;
     }
+    return a;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> p(n);
+        for (int i = 0; i < n; i++) cin >> p[i];
+
+        long long ans = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int len = 2; len <= 4; len++) {
+                if (i + len <= n) {
+                    int mn = p[i], mx = p[i];
+                    int g = p[i];
+                    for (int j = i; j < i + len; j++) {
+                        mn = min(mn, p[j]);
+                        mx = max(mx, p[j]);
+                        g = mygcd(g, p[j]);
+                    }
+                    if (mx - mn == g) ans++;
+                }
+            }
+        }
+        cout << ans << "\n";
+    }
+    return 0;
 }
