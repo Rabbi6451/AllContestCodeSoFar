@@ -10,5 +10,4 @@ int main(){
         cin>>b>>k>>c;
         cout<<b+c<<endl;
     }    
-    
 }
