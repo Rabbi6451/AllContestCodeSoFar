@@ -14,12 +14,16 @@ int main(){
         vector<int> a(n);
         for (int i = 0; i < n; i++) cin >> a[i];
 
-        vector<int> freq(101, 0);
-        for (int x : a) freq[x]++;
+        vector<bool> present(101, false);
+        for (int x : a) {
+            if (x <= 100) present[x] = true;
+        }
 
-        int ans = 0;
-        while (freq[ans] > 0) ans++;
-        cout << ans << "\n";
+        for (int i = 0; i <= 100; i++) {
+            if (!present[i]) {
+                cout << i << "\n";
+                break;
+            }
+        }
     }
-    return 0;
 }
