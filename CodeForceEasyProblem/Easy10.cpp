@@ -14,7 +14,7 @@ int main() {
         cin >> m >> b;
         cin >> c;
 
-        string result = a;
+        string result = a; 
         for (int i = 0; i < m; i++) {
             if (c[i] == 'V') {
                 result = b[i] + result; 
