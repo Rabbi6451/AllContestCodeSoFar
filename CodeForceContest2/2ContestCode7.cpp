@@ -24,16 +24,7 @@ int main() {
         if (isPalindrome(s)) {
             minwf = 1;
         } else {
-            bool found = false;
-            for (int i = 0; i < n - 1; i++) {
-                if (s[i] == s[i+1]) { found = true; break; }
-            }
-            if (!found) {
-                for (int i = 0; i < n - 2; i++) {
-                    if (s[i] == s[i+2]) { found = true; break; }
-                }
-            }
-            minwf = found ? 1 : 2;
+            minwf = 2;
         }
         cout << minwf << endl;
     }
