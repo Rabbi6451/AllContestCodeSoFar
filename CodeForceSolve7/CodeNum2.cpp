@@ -3,42 +3,30 @@
 using namespace std;
 
 int main() {
-    int n; 
-    cin >> n;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    while(n--) {
-        int a;
-        cin >> a;
-        vector<int> arr(a);
-
-        for(int i = 0; i < a; i++) {
+    int t;
+    cin >> t;
+    while(t--) {
+        int n, x;
+        cin >> n >> x;
+        vector<int> arr(n);
+        for(int i = 0; i < n; i++) {
             cin >> arr[i];
         }
 
-        int count = 0;
-        int i = 0;
-
-        while(i < a) {
-            if(arr[i] == 1) {
-                int run = 0;
-                while(i < a && arr[i] == 1) {
-                    run++;
-                    i++;
-                }
-                if(run >= 2) {
-                    count += (run - 1);
-                } else {
-                    count += run;
-                }
-            } else {
-                i++;
-            }
+        // Count how many doors are closed (1)
+        int closedCount = 0;
+        for(int i = 0; i < n; i++) {
+            if(arr[i] == 1) closedCount++;
         }
 
-        if(a > count) {
-            cout << "YES" << endl;
+        // If closed doors <= x, Yousef can open them all with the button
+        if(closedCount <= x) {
+            cout << "YES\n";
         } else {
-            cout << "NO" << endl;
+            cout << "NO\n";
         }
     }
     return 0;
