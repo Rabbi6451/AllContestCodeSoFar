@@ -29,6 +29,8 @@ int main() {
         }else{
             cout<<"YES"<<endl;
         }
+        cout<<finalresult<<endl;
+
     }
         
 }
