@@ -20,7 +20,6 @@ int main(){
             else rev.push_back(lo++);
             useHigh = !useHigh;
         }
-        
         for (int i = n - 1; i >= 0; i--) {
             cout << rev[i] << " \n"[i == 0];
         }
