@@ -27,7 +27,6 @@ int main() {
         for (int i = 0; i < n; i++) {
             surplus += a[i] - target;
             if (surplus < 0) { 
-                // not enough water from the left to fill this container
                 possible = false;
                 break;
             }
