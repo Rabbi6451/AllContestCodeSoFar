@@ -1,27 +1,24 @@
+#define ll long long
+#define fast ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #include<iostream>
 using namespace std;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-    while(t--){
-        long long x, y;
-        cin >> x >> y;
-        
-        long long diff = x - 2*y;
-        
-        long long mod = ((diff % 3) + 3) % 3;
-        
-        long long c0 = max(0LL, -y);
-        
-        if (mod == 0 && diff - 6*c0 >= 0) {
-            cout << "YES\n";
-        } else {
-            cout << "NO\n";
-        }
-    }
+void solve() {
+ 
+    ll x,y; cin>>x>>y;
+ 
+    if(y < 0) x-= -4 * y;
+    else if(y > 0) x-= 2 * y;
     
+    if(x >= 0 && x % 3 == 0) cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+}
+ 
+int main() {
+    fast;
+    int t ;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
 }
