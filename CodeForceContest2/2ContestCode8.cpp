@@ -2,14 +2,23 @@
 #include<vector>
 using namespace std;
 
-int main(){
-    int a;
-    cin>>a;
-    while(a--){
-        int b;
-        cin>>b;
-        vector<int> t(b);
-        for(int i=0;i<b;i++) cin>>t[i];
-        
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<long long> a(n);
+        long long cnt1 = 0, cnt0 = 0;
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            if (a[i] == 1) cnt1++;
+            if (a[i] == 0) cnt0++;
+        }
+        long long ans = cnt1 * (1LL << cnt0);
+        cout << ans << "\n";
     }
 }
