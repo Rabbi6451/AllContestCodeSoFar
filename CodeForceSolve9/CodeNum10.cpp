@@ -1,12 +1,20 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
-int main(){
-    int a;
-    cin>>a;
-    while(a--){
-        int b,c;
-        cin>>b>>c;
-        
+int main() {
+    int t; cin >> t;
+    while(t--) {
+        int n; cin >> n;
+        vector<int> a(n);
+        int sum = 0;
+        for(int i=0; i<n; i++) {
+            cin >> a[i];
+            sum += a[i];
+        }
+        if(n % 2 == 1) cout << "NO\n";
+        else if(sum % 4 == 0) cout << "YES\n";
+        else cout << "NO\n";
     }
+    return 0;
 }
