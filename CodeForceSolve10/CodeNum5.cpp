@@ -1,5 +1,5 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -20,7 +20,7 @@ int main() {
         long long ans = 0;
         long long remaining = n;
 
-        while (k > 0 && remaining > 0) {
+        while (remaining > 0 && k > 0) {
             long long block = 1;
             while ((block << 1) - 1 <= remaining) {
                 block <<= 1;
