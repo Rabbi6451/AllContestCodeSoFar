@@ -22,7 +22,6 @@ int main() {
         }
         maxDepth = max(maxDepth, depth);
     }
-
     cout << maxDepth << endl;
 }
 //Dps version.
