@@ -5,22 +5,24 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        int b, c, d;
+        long long b, c, d;
         cin >> b >> c >> d;
-        int dNeed = d * 5;
-
-        bool result = true; 
-        int first = 0,second = 0;
-        while(first==dNeed || second ==dNeed){
-            first = first + b;
-            second = second + c;
-            if(second == dNeed){
-                result=false;
+        long long target = d*5;
+        long long total = 0;
+        bool found = false;
+        while(true){
+            total = total + b;
+            if(total>target){
+                cout<<"NO"<<endl;
+                break;
+            }
+            total = total + c;
+            if(total>target){
+                cout<<"YES"<<endl;
+                break;
             }
         }
-
-        if (result) cout << "NO\n";
-        else cout << "YES\n";
+        
     }
     return 0;
 }
