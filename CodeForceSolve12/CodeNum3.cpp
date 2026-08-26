@@ -5,24 +5,20 @@ int main() {
     int t;
     cin >> t;
     while (t--) {
-        long long b, c, d;
-        cin >> b >> c >> d;
-        long long target = d*5;
-        long long total = 0;
-        bool found = false;
-        while(true){
-            total = total + b;
-            if(total>target){
-                cout<<"NO"<<endl;
-                break;
-            }
-            total = total + c;
-            if(total>target){
-                cout<<"YES"<<endl;
-                break;
-            }
+        long long x, y, a;
+        cin >> x >> y >> a;
+        long long target = a * 5;
+
+        long long cycles = target / (x + y);
+
+        long long dug = cycles * (x + y);
+
+        if (dug >= target) {
+            cout << "NO" << endl;
+        } else {
+            cout << "YES" << endl;
         }
-        
     }
     return 0;
 }
+
