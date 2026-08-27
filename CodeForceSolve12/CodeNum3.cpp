@@ -2,23 +2,21 @@
 using namespace std;
 
 int main() {
-    int t;
-    cin >> t;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t; cin >> t;
     while (t--) {
-        long long x, y, a;
+        long long x, y, a; 
         cin >> x >> y >> a;
-        long long target = a * 5;
+        long long T = a + 1, lo = 1, hi = 2e9+10;
 
-        long long cycles = target / (x + y);
-
-        long long dug = cycles * (x + y);
-
-        if (dug >= target) {
-            cout << "NO" << endl;
-        } else {
-            cout << "YES" << endl;
+        while (lo < hi) {
+            long long mid = (lo + hi) / 2;
+            long long val = (mid % 2 == 0) ? (mid/2)*(x+y) : ((mid-1)/2)*(x+y) + x;
+            if (val >= T) hi = mid;
+            else lo = mid + 1;
         }
+        cout << (lo % 2 ? "NO" : "YES") << "\n";
     }
-    return 0;
 }
-
