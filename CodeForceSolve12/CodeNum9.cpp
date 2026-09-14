@@ -3,30 +3,31 @@
 using namespace std;
 
 void solve(){
-    int b;
-    cin>>b;
-    vector<int>t(b);
-    int cnt1 = 0;
-    int cnt0 = 0;
-    for(int i=0;i<b;i++) cin>>t[i];
-    for(int i=0;i<b;i++){
-        if(t[i]==1){
-            cnt1++;
-        }else if(t[i]==0){
-            cnt0++;
+    int n;
+    cin >> n;
+    vector<int> p(n+1);
+    for (int i = 1; i <= n; i++) cin >> p[i];
+
+    vector<int> S;
+    for (int i = 1; i <= n; i++)
+        if (p[i] != i) S.push_back(i);
+
+    int k = S.size();
+    bool ok = true;
+    for (int j = 0; j < k; j++){
+        if (p[S[j]] != S[k-1-j]) 
+        {
+            ok = false;
+            break;
         }
     }
-    if(cnt1<cnt0 && cnt1!=cnt0){
-        cout<<"Elsie"<<endl;
-    }else{
-        cout<<"Bessie"<<endl;
-    }
 
+    cout << (ok?"YES":"NO")<<endl;
 }
+
 int main(){
-    int a;
-    cin>>a;
-    while(a--){
-        solve();
-    }
+    int t;
+    cin >> t;
+    while (t--) 
+    solve();
 }
