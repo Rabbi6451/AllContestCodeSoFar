@@ -1,21 +1,46 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <map>
 using namespace std;
 
-int main()
-{
-    int a;
-    cin >> a;
-    vector<int> t(a);
-    for (int i = 0; i < a; i++)
-    {
-        cin >> t[i];
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        string s;
+        cin >> n >> s;
+
+        vector<bool> printed(n + 1, false);
+        vector<int> st;
+
+        for (int i = 1; i <= n; i++) {
+            char c = s[i - 1];
+            if (c == '1') {
+                st.push_back(i);
+            } else if (c == '2') {
+                if (!st.empty()) {
+                    printed[st.back()] = true;
+                    st.pop_back();
+                } else {
+                    printed[i] = true;
+                }
+            } else {
+                printed[i] = true;
+            }
+        }
+
+        vector<int> res;
+        for (int i = 1; i <= n; i++)
+            if (!printed[i]) res.push_back(i);
+
+        cout << res.size() << "\n";
+        for (size_t j = 0; j < res.size(); j++) {
+            if (j) cout << ' ';
+            cout << res[j];
+        }
+        cout << "\n";
     }
-    map<int, int> count;
-    for(int x : t) count[x]++;
-    for(auto &p:count){
-        cout<<p.first <<" : "<<p.second<<endl;
-    }
+    return 0;
 }
